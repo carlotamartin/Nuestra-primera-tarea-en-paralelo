@@ -24,7 +24,7 @@ scrape ("e.com")
 if __name__ == '__main__':
 
 
-    pool = Pool(processes=4)
+    pool = Pool(processes=2)
     data = pool.map(scrape, urls)
 
 
