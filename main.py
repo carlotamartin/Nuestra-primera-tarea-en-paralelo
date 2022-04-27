@@ -6,6 +6,7 @@ from time import sleep
 
 
 
+urls = ["a.com", "b.com", "c.com", "d.com", "e.com"]
 
 def scrape(url):
     print("starting", url)
@@ -18,10 +19,10 @@ scrape ("a.com") # hecho por el proceso 1
 scrape ("b.com") # hecho por el proceso 2
 scrape ("c.com") # hecho por el proceso 3
 scrape ("d.com") # hecho por proceso 4
+scrape ("e.com")
 
 if __name__ == '__main__':
 
-    urls = ["a.com", "b.com", "c.com", "d.com"]
 
     pool = Pool(processes=4)
     data = pool.map(scrape, urls)
