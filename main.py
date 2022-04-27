@@ -6,7 +6,7 @@ from time import sleep
 
 
 
-urls = ["a.com", "b.com", "c.com", "d.com", "e.com"]
+urls = ["a.com", "b.com", "c.com", "d.com", "e.com", "f.com"]
 
 def scrape(url):
     print("starting", url)
@@ -32,3 +32,4 @@ if __name__ == '__main__':
     print()
     for row in data:
         print(row)
+
