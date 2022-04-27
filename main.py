@@ -5,7 +5,7 @@ import random
 from time import sleep
 
 
-urls = ["a.com", "b.com", "c.com", "d.com"]
+
 
 def scrape(url):
     print("starting", url)
@@ -14,14 +14,20 @@ def scrape(url):
     print("finished", url, "time taken:", duration, "seconds")
     return url, duration
 
+scrape ("a.com") # hecho por el proceso 1
+scrape ("b.com") # hecho por el proceso 2
+scrape ("c.com") # hecho por el proceso 3
+scrape ("d.com") # hecho por proceso 4
+
+if __name__ == '__main__':
+
+    urls = ["a.com", "b.com", "c.com", "d.com"]
+
+    pool = Pool(processes=4)
+    data = pool.map(scrape, urls)
 
 
-
-pool = Pool(processes=4)
-data = pool.map(scrape, urls)
-
-
-'''pool.close()
-print()
-for row in data:
-    print(row)'''
+    pool.close()
+    print()
+    for row in data:
+        print(row)
